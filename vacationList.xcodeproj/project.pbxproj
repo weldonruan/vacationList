@@ -13,6 +13,9 @@
 		846EEE6D1A8F8412001F254F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846EEE6C1A8F8412001F254F /* Images.xcassets */; };
 		846EEE701A8F8412001F254F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846EEE6E1A8F8412001F254F /* LaunchScreen.xib */; };
 		846EEE7C1A8F8412001F254F /* vacationListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EEE7B1A8F8412001F254F /* vacationListTests.swift */; };
+		846EEE861A8F8DB9001F254F /* Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846EEE851A8F8DB9001F254F /* Readme.txt */; };
+		846EEE881A8F9231001F254F /* AddVacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EEE871A8F9231001F254F /* AddVacationViewController.swift */; };
+		846EEE8A1A8F94CA001F254F /* VacationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846EEE891A8F94CA001F254F /* VacationListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		846EEE751A8F8412001F254F /* vacationListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vacationListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		846EEE7A1A8F8412001F254F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846EEE7B1A8F8412001F254F /* vacationListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vacationListTests.swift; sourceTree = "<group>"; };
+		846EEE851A8F8DB9001F254F /* Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.txt; sourceTree = "<group>"; };
+		846EEE871A8F9231001F254F /* AddVacationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVacationViewController.swift; sourceTree = "<group>"; };
+		846EEE891A8F94CA001F254F /* VacationListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacationListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 		846EEE571A8F8412001F254F = {
 			isa = PBXGroup;
 			children = (
+				846EEE851A8F8DB9001F254F /* Readme.txt */,
 				846EEE621A8F8412001F254F /* vacationList */,
 				846EEE781A8F8412001F254F /* vacationListTests */,
 				846EEE611A8F8412001F254F /* Products */,
@@ -78,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				846EEE651A8F8412001F254F /* AppDelegate.swift */,
+				846EEE891A8F94CA001F254F /* VacationListTableViewController.swift */,
+				846EEE871A8F9231001F254F /* AddVacationViewController.swift */,
 				846EEE671A8F8412001F254F /* ViewController.swift */,
 				846EEE691A8F8412001F254F /* Main.storyboard */,
 				846EEE6C1A8F8412001F254F /* Images.xcassets */,
@@ -194,6 +203,7 @@
 			files = (
 				846EEE6B1A8F8412001F254F /* Main.storyboard in Resources */,
 				846EEE701A8F8412001F254F /* LaunchScreen.xib in Resources */,
+				846EEE861A8F8DB9001F254F /* Readme.txt in Resources */,
 				846EEE6D1A8F8412001F254F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,8 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846EEE8A1A8F94CA001F254F /* VacationListTableViewController.swift in Sources */,
 				846EEE681A8F8412001F254F /* ViewController.swift in Sources */,
 				846EEE661A8F8412001F254F /* AppDelegate.swift in Sources */,
+				846EEE881A8F9231001F254F /* AddVacationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +419,7 @@
 				846EEE811A8F8412001F254F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		846EEE821A8F8412001F254F /* Build configuration list for PBXNativeTarget "vacationListTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				846EEE841A8F8412001F254F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
