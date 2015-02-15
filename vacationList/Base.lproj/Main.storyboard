@@ -138,9 +138,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="VWj-3n-QC3" secondAttribute="trailing" constant="100" id="a9M-V3-S0k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VWj-3n-QC3" secondAttribute="trailing" constant="10" id="a9M-V3-S0k"/>
                             <constraint firstItem="VWj-3n-QC3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="lxL-xh-379"/>
-                            <constraint firstItem="VWj-3n-QC3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="upQ-ZS-fiP"/>
+                            <constraint firstItem="VWj-3n-QC3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="upQ-ZS-fiP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新增度假地" id="9zE-UN-eev">

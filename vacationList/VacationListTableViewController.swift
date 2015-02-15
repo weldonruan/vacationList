@@ -15,13 +15,12 @@ class VacationListTableViewController: UITableViewController {
     var vacationStat = [Bool]()
     
     func loadInitData() {
-        
         vacationList.append( "北京 Beijing" )
         vacationList.append( "上海 Shanghai" )
         vacationList.append( "广州 Guangzhou" )
         vacationList.append( "深圳 Shenzhen" )
         vacationList.append( "香港 Hongkong" )
-        vacationList.append( "澳门 Macao" )
+        vacationList.append( "澳门 Macau" )
         
         vacationStat.append(false)
         vacationStat.append(false)
@@ -29,7 +28,6 @@ class VacationListTableViewController: UITableViewController {
         vacationStat.append(false)
         vacationStat.append(false)
         vacationStat.append(false)
-        
     }
 
     override func viewDidLoad() {
@@ -37,9 +35,8 @@ class VacationListTableViewController: UITableViewController {
         
         //将UI中左侧的编辑按钮和编辑动作做一个绑定
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        
+        //初始化
         loadInitData()
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,7 +44,7 @@ class VacationListTableViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // 返回表格有几个部分
+        // 返回表格有几个部分(几列)
         return 1
     }
 
