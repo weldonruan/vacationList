@@ -9,94 +9,97 @@
 import UIKit
 
 class VacationListTableViewController: UITableViewController {
+    
+    //定义空数组:度假地数组,vacationList;度假地状态数组,vacationStat
+    var vacationList = [String]()
+    var vacationStat = [Bool]()
+    
+    func loadInitData() {
+        
+        vacationList.append( "北京 Beijing" )
+        vacationList.append( "上海 Shanghai" )
+        vacationList.append( "广州 Guangzhou" )
+        vacationList.append( "深圳 Shenzhen" )
+        vacationList.append( "香港 Hongkong" )
+        vacationList.append( "澳门 Macao" )
+        
+        vacationStat.append(false)
+        vacationStat.append(false)
+        vacationStat.append(false)
+        vacationStat.append(false)
+        vacationStat.append(false)
+        vacationStat.append(false)
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //将UI中左侧的编辑按钮和编辑动作做一个绑定
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
+        loadInitData()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        // 返回表格有几个部分
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        // 返回表格有多少行
+        return vacationList.count
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("PCell", forIndexPath: indexPath) as UITableViewCell
+        let v1 = vacationList[indexPath.row]
+        // 给回调的单元格指定内容,仅在初始化或重绘tableView时回调并绘制表格
+        cell.textLabel?.text = v1
+        //println("indexPath.row=\(indexPath.row)")
+        if vacationStat[indexPath.row] {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // 点击tableView中内容的回调事件
+        //println("didSelectRowAtIndexPath=\(indexPath.row)")
+        if vacationStat[indexPath.row] {
+            vacationStat[indexPath.row] = false
+        } else {
+            vacationStat[indexPath.row] = true
+        }
+        //重绘控件tableView
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        //commitEditStyle的回调函数，本次只接管删除动作
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            vacationList.removeAtIndex(indexPath.row)
+            vacationStat.removeAtIndex(indexPath.row)
+            //删除的动画效果是下面的单元格往上推
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     //反向回退
     @IBAction func unwindToList(segue : UIStoryboardSegue) {
-    
+        let source = segue.sourceViewController as AddVacationViewController
+        let v1 = source.vacation_for_add
+        if (v1 != "") {
+            vacationStat.append(false)
+            vacationList.append(v1)
+        }
     }
 
 }

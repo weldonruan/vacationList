@@ -10,4 +10,4 @@ Tab Bar Item
 1.新建一个File,定义一个类名,继承自ViewController
 2.在storyboard中选中Controller,在最右边的identity inspector下，选择刚才新建的类名
 
-课时13已经看完
+全部看完，并且调整完代码

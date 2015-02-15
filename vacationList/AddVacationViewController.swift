@@ -9,27 +9,28 @@
 import UIKit
 
 class AddVacationViewController: UIViewController {
+    //需要增加的度假地
+    var vacation_for_add = ""
 
+    //申明两个控件给内部使用,用鼠标从mainboard中拖进来的
+    @IBOutlet weak var btnAddVacationDone: UIBarButtonItem!
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //过渡前的准备
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if sender as NSObject == btnAddVacationDone {
+            if (!textField.text.isEmpty) {
+                vacation_for_add = textField.text
+            }
+        }
     }
-    */
 
 }
